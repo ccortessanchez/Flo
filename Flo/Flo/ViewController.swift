@@ -18,11 +18,6 @@ class ViewController: UIViewController {
         counterLabel.text = String(counterView.count)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func pushButtonPressed(_ pushButton: PushButton) {
         if pushButton.isAddButton {
             if counterView.count != 8 {

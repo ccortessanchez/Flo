@@ -90,6 +90,8 @@
                     <connections>
                         <outlet property="counterLabel" destination="2O5-Vf-rhl" id="9IM-zq-Vhf"/>
                         <outlet property="counterView" destination="Sae-ob-yZU" id="Sy7-nY-Oku"/>
+                        <outlet property="lessButton" destination="5qV-Th-ZGO" id="GpU-47-SxW"/>
+                        <outlet property="plusButton" destination="fpz-H4-J3h" id="gWv-eP-unt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
