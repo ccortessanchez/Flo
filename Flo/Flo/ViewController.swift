@@ -25,11 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func pushButtonPressed(_ pushButton: PushButton) {
         if pushButton.isAddButton {
-            counterView.count += 1
-        } else {
-            if counterView.count > 0 {
-                counterView.count -= 1
+            if counterView.count != 8 {
+                counterView.count += 1
             }
+        } else if counterView.count > 0{
+            counterView.count -= 1
         }
         counterLabel.text = String(counterView.count)
     }
