@@ -50,6 +50,14 @@
                                     <constraint firstAttribute="width" constant="230" id="FQB-hx-QDF"/>
                                     <constraint firstAttribute="height" constant="230" id="g7T-oY-6py"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
