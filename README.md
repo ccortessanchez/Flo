@@ -24,3 +24,4 @@ App for tracking drinking habits. Part of Raywenderlich Core Graphics tutorial s
 ## Built with
 
 ## License
+Flo is available under the MIT license. See the [LICENSE](https://github.com/ccortessanchez/Flo/blob/master/LICENSE) file for more info.
