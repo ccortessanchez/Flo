@@ -25,7 +25,23 @@ import UIKit
     @IBInspectable var counterColor: UIColor = UIColor.orange
     
     override func draw(_ rect: CGRect) {
+        //define center point of the view where we rotate the arc around
+        let center = CGPoint(x: bounds.width/2, y: bounds.height/2)
         
+        //calculate radius based on max dimension of view
+        let radius: CGFloat = max(bounds.width, bounds.height)
+        
+        //define start and end angles for arc
+        let startAngle: CGFloat = 3 * .pi/4
+        let endAngle: CGFloat = .pi/4
+        
+        //create path based on center point, radius and angles defined above
+        let path = UIBezierPath(arcCenter: center, radius: radius/2 - Constants.arcWidth/2, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        
+        //set line width and color before setting the stroke
+        path.lineWidth = Constants.arcWidth
+        counterColor.setStroke()
+        path.stroke()
     }
 
 }
