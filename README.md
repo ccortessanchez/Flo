@@ -122,6 +122,9 @@ plusPath.stroke()
 <img width="300" height="270" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/IBInspectable_button.png">
 </p>
 
+### Arcs with UIBezierPath
+#### Drawing arcs
+#### Outlining the arc
 ***
 
 ## License
