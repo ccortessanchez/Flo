@@ -22,6 +22,8 @@ App for tracking drinking habits. Part of Raywenderlich Core Graphics tutorial s
 * Swift 4.0
 
 ## Built with
+* [Core Graphics](https://developer.apple.com/documentation/coregraphics)
+* [IBDesignable/IBInspectable](http://nshipster.com/ibinspectable-ibdesignable/)
 
 ## License
 Flo is available under the MIT license. See the [LICENSE](https://github.com/ccortessanchez/Flo/blob/master/LICENSE) file for more info.
