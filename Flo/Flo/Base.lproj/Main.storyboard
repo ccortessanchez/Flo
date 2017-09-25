@@ -43,12 +43,22 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sae-ob-yZU" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                                <rect key="frame" x="72" y="123.5" width="230" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="FQB-hx-QDF"/>
+                                    <constraint firstAttribute="height" constant="230" id="g7T-oY-6py"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5qV-Th-ZGO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2eQ-Lb-K16"/>
                             <constraint firstItem="fpz-H4-J3h" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2q4-aE-qf6"/>
+                            <constraint firstItem="Sae-ob-yZU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6q7-3q-ABx"/>
                             <constraint firstItem="fpz-H4-J3h" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="100" id="GOx-UA-N23"/>
+                            <constraint firstItem="fpz-H4-J3h" firstAttribute="top" secondItem="Sae-ob-yZU" secondAttribute="bottom" constant="40" id="OzM-gJ-T09"/>
                             <constraint firstItem="5qV-Th-ZGO" firstAttribute="top" secondItem="fpz-H4-J3h" secondAttribute="bottom" constant="20" id="akL-fD-p6L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
