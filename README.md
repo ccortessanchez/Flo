@@ -178,6 +178,39 @@ path.stroke()
 ```
 
 #### Outlining the arc
+1. At the end of *draw()*, calculate the difference between the two angles
+```swift
+let angleDifference: CGFloat = 2 * .pi - startAngle + endAngle
+```
+2. Calculate the arc for each glass and multiply by the actual glasses drunk
+```swift
+let arcLengthPerGlass = angleDifference / CGFloat(Constants.numberOfGlasses)
+let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
+```
+3. Draw the outer arc
+```swift
+let outlinePath = UIBezierPath(arcCenter: center,
+                                  radius: bounds.width/2 - Constants.halfOfLineWidth,
+                              startAngle: startAngle,
+                                endAngle: outlineEndAngle,
+                               clockwise: true)
+```
+4. Draw the inner arc
+```swift
+outlinePath.addArc(withCenter: center,
+                       radius: bounds.width/2 - Constants.arcWidth + Constants.halfOfLineWidth,
+                   startAngle: outlineEndAngle,
+                     endAngle: startAngle,
+                    clockwise: false)
+```
+5. Close the path
+```swift
+outlinePath.close()
+    
+outlineColor.setStroke()
+outlinePath.lineWidth = Constants.lineWidth
+outlinePath.stroke()
+```
 ***
 
 ## License
