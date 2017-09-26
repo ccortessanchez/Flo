@@ -14,6 +14,7 @@
     * [Example: Plus button](#plus-button-example)
   * [Custom storyboard properties](#custom-storyboard-properties)
     * [Example: Inspectable variables](#inspectable-variable-examples)
+  * [Screenshot](#screenshot)
 * [Gradients and contexts](#gradients-and-contexts)
 * [Patterns and playgrounds](#patterns-and-playgrounds)
 * [License](#license)
@@ -213,6 +214,12 @@ outlineColor.setStroke()
 outlinePath.lineWidth = Constants.lineWidth
 outlinePath.stroke()
 ```
+
+### Screenshot
+<p align="left">
+<img width="225" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/View_EndPart1.png">
+</p>
+
 ***
 ## Gradients and contexts
 
