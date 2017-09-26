@@ -44,13 +44,47 @@ class ViewController: UIViewController {
             counterViewTap(nil)
         }
     }
+    
     @IBAction func counterViewTap(_ gesture: UITapGestureRecognizer?) {
         if (isGraphViewShowing) {
             //hide graph
             UIView.transition(from: graphView, to: counterView, duration: 1.0, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
         } else {
             //show graph
+            setupGraphDisplay()
             UIView.transition(from: counterView, to: graphView, duration: 1.0, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
+        }
+        isGraphViewShowing = !isGraphViewShowing
+    }
+    
+    //MARK: Helper methods
+    func setupGraphDisplay() {
+        
+        let maxDayIndex = stackView.arrangedSubviews.count - 1
+        
+        //replace last day with today's actual data
+        graphView.graphPoints[graphView.graphPoints.count - 1] = counterView.count
+        //redrawn graph
+        graphView.setNeedsDisplay()
+        maxLabel.text = "\(graphView.graphPoints.max()!)"
+        
+        //calculate average from graph points
+        let average = graphView.graphPoints.reduce(0, +) / graphView.graphPoints.count
+        averageWaterDrunk.text = "\(average)"
+        
+        //setup date formatter and calendar
+        let today = Date()
+        let calendar = Calendar.current
+        
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("EEEEE")
+        
+        //setup the day name labels with correct days
+        for i in 0...maxDayIndex {
+            if let date = calendar.date(byAdding: .day, value: -i, to: today),
+                let label = stackView.arrangedSubviews[maxDayIndex - i] as? UILabel {
+                label.text = formatter.string(from: date)
+            }
         }
     }
     
