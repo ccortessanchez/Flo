@@ -92,7 +92,7 @@ import UIKit
         
         //Create the clipping path for the graph gradient
         //save state of the context
-        //context.saveGState()
+        context?.saveGState()
         
         //make a copy of the path
         let clippingPath = graphPath.copy() as! UIBezierPath
@@ -111,7 +111,7 @@ import UIKit
         let graphEndPoint = CGPoint(x: margin, y: bounds.height)
         
         context?.drawLinearGradient(gradient!, start: graphStartPoint, end: graphEndPoint, options: [])
-        //context?.restoreGState()
+        context?.restoreGState()
         
         //draw the line on top of the clipped gradient
         graphPath.lineWidth = 2.0
