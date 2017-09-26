@@ -124,6 +124,59 @@ plusPath.stroke()
 
 ### Arcs with UIBezierPath
 #### Drawing arcs
+1. Create a new class *CounterView.swift* and make it subclass of *UIView*. Add the next code to *CounterView*
+```swift
+@IBDesignable class CounterView: UIView {
+  
+  private struct Constants {
+    static let numberOfGlasses = 8
+    static let lineWidth: CGFloat = 5.0
+    static let arcWidth: CGFloat = 76
+    
+    static var halfOfLineWidth: CGFloat {
+      return lineWidth / 2
+    }
+  }
+  
+  @IBInspectable var counter: Int = 5
+  @IBInspectable var outlineColor: UIColor = UIColor.blue
+  @IBInspectable var counterColor: UIColor = UIColor.orange
+  
+  override func draw(_ rect: CGRect) {
+    
+  }
+}
+```
+2. Add a view to the storyboard. In the *Identity Inspector* change *UIView* class for *CounterView*
+3. Add Auto-Layout constraints to the view
+4. In *draw()*, define the center point of the view where you’ll rotate the arc around
+```swift
+let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+```
+5. Calculate the radius based on view's max dimension
+```swift
+let radius: CGFloat = max(bounds.width, bounds.height)
+```
+6. Define start and end angles for the arc
+```swift
+let startAngle: CGFloat = 3 * .pi / 4
+let endAngle: CGFloat = .pi / 4
+```
+7. Create a path based on the center point, radius, and angles defined
+```swift
+let path = UIBezierPath(arcCenter: center,
+                           radius: radius/2 - Constants.arcWidth/2,
+                       startAngle: startAngle,
+                         endAngle: endAngle,
+                        clockwise: true)
+```
+8. Set the line width and color before finally stroking the path
+```swift
+path.lineWidth = Constants.arcWidth
+counterColor.setStroke()
+path.stroke()
+```
+
 #### Outlining the arc
 ***
 
