@@ -34,6 +34,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="68f-bi-Tmd" firstAttribute="centerY" secondItem="poA-4A-3WT" secondAttribute="centerY" id="8WR-Up-DwO"/>
                                             <constraint firstAttribute="height" constant="230" id="hhU-pj-CRu"/>
@@ -59,6 +60,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Coy-A6-8sH"/>
                                     <constraint firstItem="e1R-sO-AdY" firstAttribute="centerY" secondItem="dUm-Kw-pxi" secondAttribute="centerY" id="FGm-h3-x0w"/>
@@ -67,6 +69,9 @@
                                     <constraint firstItem="e1R-sO-AdY" firstAttribute="centerX" secondItem="dUm-Kw-pxi" secondAttribute="centerX" id="yON-bb-Vv0"/>
                                     <constraint firstItem="poA-4A-3WT" firstAttribute="centerX" secondItem="dUm-Kw-pxi" secondAttribute="centerX" id="yiz-E1-XtJ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JCf-Y3-MPs" appends="YES" id="CxR-W8-MY3"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-EJ-lyL" customClass="PushButton" customModule="Flo" customModuleProvider="target">
                                 <rect key="frame" x="157" y="438" width="100" height="100"/>
@@ -119,6 +124,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JCf-Y3-MPs">
+                    <connections>
+                        <action selector="counterViewTap:" destination="BYZ-38-t0r" id="5LT-9N-Opg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="93.599999999999994" y="37.331334332833585"/>
         </scene>
