@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-Kw-pxi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-Kw-pxi" userLabel="Container View">
                                 <rect key="frame" x="57" y="118" width="300" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poA-4A-3WT" customClass="CounterView" customModule="Flo" customModuleProvider="target">
@@ -49,12 +49,22 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-sO-AdY" customClass="GraphView" customModule="Flo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="25" width="300" height="250"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="FnB-nm-Yj6"/>
+                                            <constraint firstAttribute="height" constant="250" id="c5R-35-2gR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Coy-A6-8sH"/>
+                                    <constraint firstItem="e1R-sO-AdY" firstAttribute="centerY" secondItem="dUm-Kw-pxi" secondAttribute="centerY" id="FGm-h3-x0w"/>
                                     <constraint firstItem="poA-4A-3WT" firstAttribute="centerY" secondItem="dUm-Kw-pxi" secondAttribute="centerY" id="OvE-P5-Lxh"/>
                                     <constraint firstAttribute="height" constant="300" id="Zmj-Qw-Fm1"/>
+                                    <constraint firstItem="e1R-sO-AdY" firstAttribute="centerX" secondItem="dUm-Kw-pxi" secondAttribute="centerX" id="yON-bb-Vv0"/>
                                     <constraint firstItem="poA-4A-3WT" firstAttribute="centerX" secondItem="dUm-Kw-pxi" secondAttribute="centerX" id="yiz-E1-XtJ"/>
                                 </constraints>
                             </view>
@@ -102,8 +112,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="dUm-Kw-pxi" id="X4b-qz-a9K"/>
                         <outlet property="counterLabel" destination="68f-bi-Tmd" id="8OB-tv-0WA"/>
                         <outlet property="counterView" destination="poA-4A-3WT" id="AnD-g5-Nh5"/>
+                        <outlet property="graphView" destination="e1R-sO-AdY" id="sGJ-rY-CTT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
