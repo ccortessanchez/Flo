@@ -9,11 +9,13 @@
 * [Description](#description)
 * [Requirements](#requirements)
 * [Built with](#built-with)
-* [Usage](#usage)
+* [Getting started](#getting-started)
   * [Custom drawing on views](#custom-drawing-on-views)
     * [Example: Plus button](#plus-button-example)
   * [Custom storyboard properties](#custom-storyboard-properties)
     * [Example: Inspectable variables](#inspectable-variable-examples)
+* [Gradients and contexts](#gradients-and-contexts)
+* [Patterns and playgrounds](#patterns-and-playgrounds)
 * [License](#license)
 ***
 
@@ -34,7 +36,7 @@ App for tracking drinking habits. Part of Raywenderlich Core Graphics tutorial s
 * [IBDesignable/IBInspectable](http://nshipster.com/ibinspectable-ibdesignable/)
 
 ***
-## Usage
+## Getting started
 ### Custom drawing on views
 1. Create a *UIView* subclass
 2. Override *draw()* and add some custom Core Graphics
@@ -212,6 +214,10 @@ outlinePath.lineWidth = Constants.lineWidth
 outlinePath.stroke()
 ```
 ***
+## Gradients and contexts
 
+## Patterns and playgrounds
+
+***
 ## License
 Flo is available under the MIT license. See the [LICENSE](https://github.com/ccortessanchez/Flo/blob/master/LICENSE) file for more info.
