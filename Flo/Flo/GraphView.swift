@@ -90,6 +90,32 @@ import UIKit
             graphPath.addLine(to: nextPoint)
         }
         
+        //Create the clipping path for the graph gradient
+        //save state of the context
+        //context.saveGState()
+        
+        //make a copy of the path
+        let clippingPath = graphPath.copy() as! UIBezierPath
+        
+        //add lines to the copied path to complete the clip area
+        clippingPath.addLine(to: CGPoint(x: columnXPoint(graphPoints.count - 1), y: height))
+        clippingPath.addLine(to: CGPoint(x: columnXPoint(0), y: height))
+        clippingPath.close()
+        
+        //add the clipping path to the context
+        clippingPath.addClip()
+        
+        //check clipping path
+        let highestYPoint = columnYPoint(maxValue)
+        let graphStartPoint = CGPoint(x: margin, y: highestYPoint)
+        let graphEndPoint = CGPoint(x: margin, y: bounds.height)
+        
+        context?.drawLinearGradient(gradient!, start: graphStartPoint, end: graphEndPoint, options: [])
+        //context?.restoreGState()
+        
+        //draw the line on top of the clipped gradient
+        graphPath.lineWidth = 2.0
+        graphPath.stroke()
     }
 
 }
