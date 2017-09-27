@@ -437,6 +437,19 @@ linePath.stroke()
 <img width="200" height="200" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphLines.png">
 </p>
 
+### Add labels to the graph
+We are going to add the next labels to the graph
+* *UILabel* with text "Water Drunk"
+* *UILabel* with text "Average: "
+* *UILabel* with text "2", next to the average label
+* *UILabel* with text "99", right aligned next to the top of the graph
+* *UILabel* with text "0", right aligned to the bottom of the graph
+* A horizontal *StackView* with labels for each day of a week
+
+<p align="left">
+<img width="200" height="200" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphLabels.png">
+</p>
+
 
 ## Patterns and playgrounds
 
