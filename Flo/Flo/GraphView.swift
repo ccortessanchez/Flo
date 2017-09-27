@@ -37,7 +37,7 @@ import UIKit
         
         //obtain current context
         //CG drawing methods need a context in order to draw
-        let context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()!
         let colors = [startColor.cgColor, endColor.cgColor]
         
         //all contexts have a color space
@@ -52,7 +52,7 @@ import UIKit
         //draw the gradient
         let startPoint = CGPoint.zero
         let endPoint = CGPoint(x:0, y: bounds.height)
-        context?.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: [])
+        context.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: [])
         
         //calculate the x point
         let margin = Constants.margin
@@ -92,7 +92,7 @@ import UIKit
         
         //Create the clipping path for the graph gradient
         //save state of the context
-        context?.saveGState()
+        context.saveGState()
         
         //make a copy of the path
         let clippingPath = graphPath.copy() as! UIBezierPath
@@ -110,8 +110,8 @@ import UIKit
         let graphStartPoint = CGPoint(x: margin, y: highestYPoint)
         let graphEndPoint = CGPoint(x: margin, y: bounds.height)
         
-        context?.drawLinearGradient(gradient!, start: graphStartPoint, end: graphEndPoint, options: [])
-        context?.restoreGState()
+        context.drawLinearGradient(gradient!, start: graphStartPoint, end: graphEndPoint, options: [])
+        context.restoreGState()
         
         //draw the line on top of the clipped gradient
         graphPath.lineWidth = 2.0
