@@ -450,6 +450,48 @@ We are going to add the next labels to the graph
 <img width="200" height="200" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphLabels.png">
 </p>
 
+1. Add the labels in storyboard and these outlets in *ViewController*
+```swift
+@IBOutlet weak var averageWaterDrunk: UILabel!
+@IBOutlet weak var maxLabel: UILabel!
+@IBOutlet weak var stackView: UIStackView!
+```
+2. In the storyboard, select Graph View and check **Hidden** so the graph view doesn't appear when the app launches
+3. In *ViewController* add a method to set up the labels
+```swift
+func setupGraphDisplay() {
+
+  let maxDayIndex = stackView.arrangedSubviews.count - 1
+  
+  graphView.graphPoints[graphView.graphPoints.count - 1] = counterView.counter
+
+  graphView.setNeedsDisplay()
+  maxLabel.text = "\(graphView.graphPoints.max()!)"
+    
+  let average = graphView.graphPoints.reduce(0, +) / graphView.graphPoints.count
+  averageWaterDrunk.text = "\(average)"
+    
+  let today = Date()
+  let calendar = Calendar.current
+    
+  let formatter = DateFormatter()
+  formatter.setLocalizedDateFormatFromTemplate("EEEEE")
+  
+  for i in 0...maxDayIndex {
+    if let date = calendar.date(byAdding: .day, value: -i, to: today),
+      let label = stackView.arrangedSubviews[maxDayIndex - i] as? UILabel {
+      label.text = formatter.string(from: date)
+    }
+  }
+} 
+```
+4. In *counterViewTap()*, call *setupGraphDisplay()* inside the else part of the conditional
+
+<p align="left">
+<img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphTransition.gif">
+</p>
+
+
 
 ## Patterns and playgrounds
 
