@@ -372,6 +372,72 @@ for i in 1..<graphPoints.count {
 }
 ```
 
+### Gradient graph
+1. Set up the clipping path at the end of *draw()*
+```swift
+//context.saveGState()
+    
+let clippingPath = graphPath.copy() as! UIBezierPath
+    
+clippingPath.addLine(to: CGPoint(x: columnXPoint(graphPoints.count - 1), y:height))
+clippingPath.addLine(to: CGPoint(x:columnXPoint(0), y:height))
+clippingPath.close()
+    
+clippingPath.addClip()
+    
+let highestYPoint = columnYPoint(maxValue)
+let graphStartPoint = CGPoint(x: margin, y: highestYPoint)
+let graphEndPoint = CGPoint(x: margin, y: bounds.height)
+        
+context.drawLinearGradient(gradient, start: graphStartPoint, end: graphEndPoint, options: [])
+//context.restoreGState()
+```
+2. Draw the original path
+```swift
+graphPath.lineWidth = 2.0
+graphPath.stroke() 
+```
+
+### Draw data points
+1. At the end of *draw()*, draw the circles on top of the graph stroke
+```swift
+for i in 0..<graphPoints.count {
+  var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+  point.x -= Constants.circleDiameter / 2
+  point.y -= Constants.circleDiameter / 2
+      
+  let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: Constants.circleDiameter, height: Constants.circleDiameter)))
+  circle.fill()
+}
+```
+
+### Context states
+1. Uncomment [step 1](#gradient-graph) commented lines
+2. At the end of *draw()*, draw three lines
+```swift
+let linePath = UIBezierPath()
+
+linePath.move(to: CGPoint(x: margin, y: topBorder))
+linePath.addLine(to: CGPoint(x: width - margin, y: topBorder))
+
+linePath.move(to: CGPoint(x: margin, y: graphHeight/2 + topBorder))
+linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight/2 + topBorder))
+
+linePath.move(to: CGPoint(x: margin, y:height - bottomBorder))
+linePath.addLine(to: CGPoint(x:  width - margin, y: height - bottomBorder))
+let color = UIColor(white: 1.0, alpha: Constants.colorAlpha)
+color.setStroke()
+    
+linePath.lineWidth = 1.0
+linePath.stroke()
+``` 
+3. Graph should look like this
+
+<p align="left">
+<img width="200" height="200" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphLines.png">
+</p>
+
+
 ## Patterns and playgrounds
 
 ***
