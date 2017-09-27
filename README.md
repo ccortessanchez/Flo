@@ -497,6 +497,8 @@ func setupGraphDisplay() {
 ```
 4. In *counterViewTap()*, call *setupGraphDisplay()* inside the else part of the conditional
 
+### Result
+
 <p align="left">
 <img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphTransition.gif">
 </p>
