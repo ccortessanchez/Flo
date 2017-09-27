@@ -14,8 +14,18 @@
     * [Example: Plus button](#plus-button-example)
   * [Custom storyboard properties](#custom-storyboard-properties)
     * [Example: Inspectable variables](#inspectable-variable-examples)
-  * [Screenshot](#screenshot)
+  * [Result](#result)
 * [Gradients and contexts](#gradients-and-contexts)
+  *[Create graph view](#create-graph-view)
+  *[Animation transition](#animation-transition)
+  *[Draw a gradient](#draw-a-gradient)
+  *[Clipping areas](#clipping-areas)
+  *[Calculate graph points](#calculate-graph-points)
+  *[Gradient graph](#gradient-graph)
+  *[Draw data points](#draw-data-points)
+  *[Context states](#context-states)
+  *[Add labels to the graph](#add-labels-to-the-graph)
+  *[Result](#Result)
 * [Patterns and playgrounds](#patterns-and-playgrounds)
 * [License](#license)
 ***
@@ -215,7 +225,7 @@ outlinePath.lineWidth = Constants.lineWidth
 outlinePath.stroke()
 ```
 
-### Screenshot
+### Result
 <p align="left">
 <img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/View_EndPart1.png">
 </p>
