@@ -232,6 +232,7 @@ outlinePath.stroke()
 <p align="left">
 <img width="300" height="300" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-DocOutline.png">
 </p>
+
 7. In *ViewController*, add outlets for *Container View* and *Graph View*. Go to storyboard and connect the outlets with their views
 ```swift
 @IBOutlet weak var containerView: UIView!
