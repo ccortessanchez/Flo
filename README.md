@@ -217,11 +217,13 @@ outlinePath.stroke()
 
 ### Screenshot
 <p align="left">
-<img width="225" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/View_EndPart1.png">
+<img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/View_EndPart1.png">
 </p>
 
 ***
 ## Gradients and contexts
+### Create graph view
+1. 
 
 ## Patterns and playgrounds
 
