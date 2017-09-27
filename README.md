@@ -230,7 +230,7 @@ outlinePath.stroke()
 5. Add Auto-Layout constraints to the view
 6. **Document Outline** should look like this
 <p align="left">
-<img width="300" height="300" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2_DocOutline.png">
+<img width="300" height="300" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-DocOutline.png">
 </p>
 7. In *ViewController*, add outlets for *Container View* and *Graph View*. Go to storyboard and connect the outlets with their views
 ```swift
