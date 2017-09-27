@@ -25,7 +25,7 @@
   * [Draw data points](#draw-data-points)
   * [Context states](#context-states)
   * [Add labels to the graph](#add-labels-to-the-graph)
-  * [Result](#Result)
+  * [Result](#result-1)
 * [Patterns and playgrounds](#patterns-and-playgrounds)
 * [License](#license)
 ***
