@@ -223,7 +223,20 @@ outlinePath.stroke()
 ***
 ## Gradients and contexts
 ### Create graph view
-1. 
+1. Add a view to the storyboard above the *Counter View* created in [part 1, step 2](#drawing-arcs). Change it's background color to make it visible. Change his name for *Container View*
+2. Add Auto-Layout constraints to the view
+3. Create a new class *GraphView.swift* and make a subclass of *UIView*
+4. Add a view to the storyboard below the *Counter View*. In the *Identity Inspector* change *UIView* class for *GraphView*
+5. Add Auto-Layout constraints to the view
+6. **Document Outline** should look like this
+<p align="left">
+<img width="300" height="300" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2_DocOutline.png">
+</p>
+7. In *ViewController*, add outlets for *Container View* and *Graph View*. Go to storyboard and connect the outlets with their views
+```swift
+@IBOutlet weak var containerView: UIView!
+@IBOutlet weak var graphView: GraphView!
+```
 
 ## Patterns and playgrounds
 
