@@ -229,6 +229,7 @@ outlinePath.stroke()
 4. Add a view to the storyboard below the *Counter View*. In the *Identity Inspector* change *UIView* class for *GraphView*
 5. Add Auto-Layout constraints to the view
 6. **Document Outline** should look like this
+
 <p align="left">
 <img width="300" height="300" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-DocOutline.png">
 </p>
@@ -238,6 +239,75 @@ outlinePath.stroke()
 @IBOutlet weak var containerView: UIView!
 @IBOutlet weak var graphView: GraphView!
 ```
+
+### Animation transition
+1. Drag a **Tap Gesture Recognizer** to *Container View* in the storyboard
+2. Add a property to *ViewController* to mark if the graph is being displayed
+```swift
+var isGraphViewShowing = false
+```
+3. Add tap method to do the transition. *UIView.transition(from:to:duration:options:completion:)* performs a horizontal flip transition
+```swift
+@IBAction func counterViewTap(_ gesture: UITapGestureRecognizer?) {
+  if (isGraphViewShowing) {
+    //hide Graph
+    UIView.transition(from: graphView,
+                      to: counterView,
+                      duration: 1.0,
+                      options: [.transitionFlipFromLeft, .showHideTransitionViews],
+                      completion:nil)
+  } else {
+    //show Graph
+    UIView.transition(from: counterView,
+                      to: graphView,
+                      duration: 1.0,
+                      options: [.transitionFlipFromRight, .showHideTransitionViews],
+                      completion: nil)
+  }
+  isGraphViewShowing = !isGraphViewShowing
+}
+```
+4. Add this code to the end of *pushButtonPressed()*
+```swift
+if isGraphViewShowing {
+  counterViewTap(nil)
+}
+```
+
+### Draw a gradient
+1. Make *GraphView.swift* a @IBDesignable class
+2. Set up the start and end colors for the gradient
+```swift
+@IBInspectable var startColor: UIColor = .red
+@IBInspectable var endColor: UIColor = .green
+```
+3. Next, inside *draw()* method obtain the current context. CG drawing functions need to know the context in which they will draw
+```swift
+let context = UIGraphicsGetCurrentContext()!
+let colors = [startColor.cgColor, endColor.cgColor]
+```
+4. Create a color space for the context
+```swift
+let colorSpace = CGColorSpaceCreateDeviceRGB()
+```
+5. Add color stops. They describe where the colors in the gradient change over. Then create the actual gradient defining color space, colors and color stops
+```swift
+let colorLocations: [CGFloat] = [0.0, 1.0]
+let gradient = CGGradient(colorsSpace: colorSpace,
+                                     colors: colors as CFArray,
+                                  locations: colorLocations)!
+```
+6. Draw the gradient
+```swift
+let startPoint = CGPoint.zero
+      let endPoint = CGPoint(x: 0, y: bounds.height)
+      context.drawLinearGradient(gradient,
+                          start: startPoint,
+                            end: endPoint,
+                        options: [])
+```
+7. In the storyboard, select all the views (except the main view) and set the **Background Color** to **Clear Color**
+
 
 ## Patterns and playgrounds
 
