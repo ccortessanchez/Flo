@@ -26,6 +26,7 @@
   * [Context states](#context-states)
   * [Add labels to the graph](#add-labels-to-the-graph)
   * [Result](#result-1)
+  * [Add marks to arc](#add-marks-to-arc)
 * [Patterns and playgrounds](#patterns-and-playgrounds)
 * [License](#license)
 ***
@@ -501,6 +502,51 @@ func setupGraphDisplay() {
 
 <p align="left">
 <img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-GraphTransition.gif">
+</p>
+
+### Add marks to arc
+In *CounterView*, at the end of *draw()* add the markers to the counter
+1. Obtain the current context and save the original state
+'''swift
+let context = UIGraphicsGetCurrentContext()!
+  
+context.saveGState()
+outlineColor.setFill()
+'''
+2. Position the marker rectangle at the top left
+```swift
+let markerWidth: CGFloat = 5.0
+let markerSize: CGFloat = 10.0
+
+let markerPath = UIBezierPath(rect: CGRect(x: -markerWidth / 2, y: 0, width: markerWidth, height: markerSize))
+```
+3. Move top left of context to the previous center position
+```swift
+context.translateBy(x: rect.width / 2, y: rect.height / 2)
+```
+4. For all the number of glasses, save the centred context, calculate the rotation angle, rotate, translate, fill the marker rectangle and restore the centred context for the next rotate
+```swift
+for i in 1...Constants.numberOfGlasses {
+  
+  context.saveGState()
+  
+  let angle = arcLengthPerGlass * CGFloat(i) + startAngle - .pi / 2
+  
+  context.rotate(by: angle)
+  context.translateBy(x: 0, y: rect.height / 2 - markerSize)
+   
+  markerPath.fill()
+
+  context.restoreGState()
+}
+```
+5. Restore the original state in case of more painting
+```swift
+context.restoreGState()
+```
+
+<p align="left">
+<img width="240" height="450" src="https://github.com/ccortessanchez/Flo/blob/master/Screenshots/Part2-ArcMarkers.png">
 </p>
 
 
