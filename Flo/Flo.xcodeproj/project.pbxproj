@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3B504D1F7CE23700790C6C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3B504C1F7CE23700790C6C /* BackgroundView.swift */; };
 		0AF55E331F79155C005C8A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF55E321F79155C005C8A42 /* AppDelegate.swift */; };
 		0AF55E351F79155C005C8A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF55E341F79155C005C8A42 /* ViewController.swift */; };
 		0AF55E381F79155C005C8A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF55E361F79155C005C8A42 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3B504C1F7CE23700790C6C /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0AF55E2F1F79155C005C8A42 /* Flo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF55E321F79155C005C8A42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AF55E341F79155C005C8A42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				0AF55E441F791AEF005C8A42 /* PushButton.swift */,
 				0AF55E461F792703005C8A42 /* CounterView.swift */,
 				0AF7C1621F7A518E003A46EE /* GraphView.swift */,
+				0A3B504C1F7CE23700790C6C /* BackgroundView.swift */,
 				0AF55E361F79155C005C8A42 /* Main.storyboard */,
 				0AF55E391F79155C005C8A42 /* Assets.xcassets */,
 				0AF55E3B1F79155C005C8A42 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3B504D1F7CE23700790C6C /* BackgroundView.swift in Sources */,
 				0AF7C1631F7A518E003A46EE /* GraphView.swift in Sources */,
 				0AF55E351F79155C005C8A42 /* ViewController.swift in Sources */,
 				0AF55E331F79155C005C8A42 /* AppDelegate.swift in Sources */,
